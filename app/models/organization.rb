@@ -8,6 +8,7 @@ class Organization < ApplicationRecord
 
   default_scope { where(deleted_at: nil) }
 
+  belongs_to :organization_webhook
   has_many :assignments,              dependent: :destroy
   has_many :groupings,                dependent: :destroy
   has_many :group_assignments,        dependent: :destroy
